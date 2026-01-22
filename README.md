@@ -11,6 +11,8 @@ A MANET (Mobile Ad-Hoc Network) is a self-forming wireless mesh where each node 
 ### SBC
 | Device            | Status    | Onboard WiFi      | Notes                        |
 |-------------------|-----------|-------------------|------------------------------|
+| Raspberry Pi 5    | ✅ Tested | ✅ Working (SPI)  | Onboard Wifi Only in AP Mode |
+| Raspberry Pi CM5  | ✅ Tested | ✅ Working (SPI)  | Onboard Wifi Only in AP Mode |
 | Raspberry Pi 4    | ✅ Tested | ✅ Working (SPI)  | Onboard Wifi Only in AP Mode |
 | Raspberry Pi CM4  | ✅ Tested | ✅ Working (SPI)  | Onboard Wifi Only in AP Mode |
 | Raspberry Pi 3B   | ✅ Tested | ✅ Working (SPI)  | Onboard Wifi Only in AP Mode |
@@ -20,9 +22,10 @@ A MANET (Mobile Ad-Hoc Network) is a self-forming wireless mesh where each node 
 
 | Device              | Status    | Interface  | MM Chipset | Notes                                 |
 |---------------------|-----------|------------|------------|---------------------------------------|
-| Wio-WM6108 + WM1302 | ✅ Tested |    SPI     | 6106       | Best performing with HaLow currently  |
-| Silex SX-SDMAH      | ✅ Tested |   SDIO     | 6106       | Very low dBm and high amount of noise |
-| Alfa AHPI6108E      | ✅ Tested |   SDIO     | 6106       | Decent performance                    |
+| HT-HC01             | ✅ Tested | SPI/SDIO   | MM6108     | Tested with RPi5                      |
+| Wio-WM6108 + WM1302 | ✅ Tested |    SPI     | MM6106     | Best performing with HaLow currently  |
+| Silex SX-SDMAH      | ✅ Tested |   SDIO     | MM6106     | Very low dBm and high amount of noise |
+| Alfa AHPI6108E      | ✅ Tested |   SDIO     | MM6106     | Decent performance                    |
 
 ## Building OpenMANET Firmware
 ### Dependencies
@@ -42,9 +45,19 @@ Install build environment packages with
 
 Run the `./scripts/openmanet_setup.sh` script to configure the build for your board of choice.
 
-For example, Using seeedstudio's WiFi Halow Modules on Raspberry Pi4.
+**For Raspberry Pi 5:**
+```
+> ./scripts/openmanet_setup.sh -i -b ekh-bcm2712
+```
+
+**For Raspberry Pi 4:**
 ```
 > ./scripts/openmanet_setup.sh -i -b ekh-bcm2711
+```
+
+**For Raspberry Pi 3:**
+```
+> ./scripts/openmanet_setup.sh -i -b ekh-bcm2710
 ```
 
 Run this to download all dependencies before starting a build.  It will make building more reliable.
