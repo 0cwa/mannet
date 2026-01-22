@@ -20,12 +20,12 @@ A MANET (Mobile Ad-Hoc Network) is a self-forming wireless mesh where each node 
 
 ### HaLow
 
-| Device              | Status    | Interface  | MM Chipset | Notes                                 |
-|---------------------|-----------|------------|------------|---------------------------------------|
-| HT-HC01             | ✅ Tested | SPI/SDIO   | MM6108     | Tested with RPi5                      |
-| Wio-WM6108 + WM1302 | ✅ Tested |    SPI     | MM6106     | Best performing with HaLow currently  |
-| Silex SX-SDMAH      | ✅ Tested |   SDIO     | MM6106     | Very low dBm and high amount of noise |
-| Alfa AHPI6108E      | ✅ Tested |   SDIO     | MM6106     | Decent performance                    |
+| Device              | Status    | Interface  | MM Chipset | Notes                                                    |
+|---------------------|-----------|------------|------------|----------------------------------------------------------|
+| Heltec HT-HC01      | ✅ Tested |    SPI     | MM6108     | Same MM6108 chip as Wio-WM6108. Fast shipping from Amazon, same price. Working fine. Tested via SPI on RPi5. |
+| Wio-WM6108 + WM1302 | ✅ Tested |    SPI     | MM6108     | Best performing with HaLow currently                     |
+| Silex SX-SDMAH      | ✅ Tested |   SDIO     | MM6106     | Very low dBm and high amount of noise                    |
+| Alfa AHPI6108E      | ✅ Tested |   SDIO     | MM6106     | Decent performance                                       |
 
 ## Building OpenMANET Firmware
 ### Dependencies
