@@ -12,7 +12,7 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 +
 +/ {
 +	compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2837",
-+	             "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2710", "brcm,bcm2711";
++	             "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2710", "brcm,bcm2711", "brcm,bcm2712";
 +
 +	fragment@0 {
 +		target = <&spi0>;
@@ -96,7 +96,7 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 +
 +/ {
 +	compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2837",
-+	             "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2710", "brcm,bcm2711";
++	             "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2710", "brcm,bcm2711", "brcm,bcm2712";
 +
 +	fragment@0 {
 +		target = <&spi0>;

@@ -1,0 +1,61 @@
+WARNING: Makefile 'package/feeds/morse/aws-kvs/Makefile' has a dependency on 'gst1-mod-videoparsersbad', which does not exist
+WARNING: Makefile 'package/feeds/luci/luci-app-polipo/Makefile' has a dependency on 'polipo', which does not exist
+WARNING: Makefile 'package/feeds/luci/luci-app-shairplay/Makefile' has a dependency on 'shairplay', which does not exist
+WARNING: Makefile 'package/feeds/luci/luci-ssl-nginx/Makefile' has a dependency on 'nginx-mod-luci-ssl', which does not exist
+make[2]: Entering directory '/home/joseca/openmanet-firmware/scripts/config'
+make[2]: 'conf' is up to date.
+make[2]: Leaving directory '/home/joseca/openmanet-firmware/scripts/config'
+make[1]: Entering directory '/home/joseca/openmanet-firmware'
++ mkdir -p /home/joseca/openmanet-firmware/staging_dir/target-aarch64_cortex-a76_musl
++ cd /home/joseca/openmanet-firmware/staging_dir/target-aarch64_cortex-a76_musl
++ mkdir -p bin lib stamp usr/include usr/lib
+mkdir -p /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/stamp
+touch /home/joseca/openmanet-firmware/staging_dir/target-aarch64_cortex-a76_musl/.prepared
+make[2]: Entering directory '/home/joseca/openmanet-firmware/target/linux'
+make[3]: Entering directory '/home/joseca/openmanet-firmware/target/linux/bcm27xx'
+rm -f /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/localversion
+/home/joseca/openmanet-firmware/scripts/kconfig.pl  + + /home/joseca/openmanet-firmware/target/linux/generic/config-6.6 /home/joseca/openmanet-firmware/target/linux/bcm27xx/config-6.6 /home/joseca/openmanet-firmware/target/linux/bcm27xx/bcm2712/config-6.6 > /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target
+awk '/^(#[[:space:]]+)?CONFIG_KERNEL/{sub("CONFIG_KERNEL_","CONFIG_");print}' /home/joseca/openmanet-firmware/.config >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target
+echo "# CONFIG_KALLSYMS_EXTRA_PASS is not set" >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target
+echo "# CONFIG_KALLSYMS_ALL is not set" >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target
+echo "CONFIG_KALLSYMS_UNCOMPRESSED=y" >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target
+/home/joseca/openmanet-firmware/scripts/package-metadata.pl kconfig /home/joseca/openmanet-firmware/tmp/.packageinfo /home/joseca/openmanet-firmware/.config 6.6 > /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.override
+/home/joseca/openmanet-firmware/scripts/kconfig.pl 'm+' '+' /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.target /dev/null /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.override > /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set
+mv /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.old
+grep -v INITRAMFS /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.old > /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set
+echo 'CONFIG_INITRAMFS_SOURCE=""' >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set
+echo '# CONFIG_INITRAMFS_FORCE is not set' >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set
+echo "# CONFIG_INITRAMFS_PRESERVE_MTIME is not set" >> /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set
+rm -rf /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/modules
+cmp -s /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.prev || { cp /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config; cp /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.prev; }
+export MAKEFLAGS= ; [ -d /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/user_headers ] || make -C /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102 KCFLAGS="-fmacro-prefix-map=/home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl=target-aarch64_cortex-a76_musl -fno-caller-saves " HOSTCFLAGS="-O2 -I/home/joseca/openmanet-firmware/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Mon Jun 23 20:40:36 2025" KBUILD_BUILD_VERSION="0" KBUILD_HOSTLDFLAGS="-L/home/joseca/openmanet-firmware/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  CC="aarch64-openwrt-linux-musl-gcc" KERNELRELEASE=6.6.102  INSTALL_HDR_PATH=/home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/user_headers headers_install
+grep '=[ym]' /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.set | LC_ALL=C sort | /home/joseca/openmanet-firmware/staging_dir/host/bin/mkhash md5 > /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.vermagic
+touch /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.configured
+rm -f /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/vmlinux /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/System.map
+make -C /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102 KCFLAGS="-fmacro-prefix-map=/home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl=target-aarch64_cortex-a76_musl -fno-caller-saves " HOSTCFLAGS="-O2 -I/home/joseca/openmanet-firmware/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Mon Jun 23 20:40:36 2025" KBUILD_BUILD_VERSION="0" KBUILD_HOSTLDFLAGS="-L/home/joseca/openmanet-firmware/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  CC="aarch64-openwrt-linux-musl-gcc" KERNELRELEASE=6.6.102 Image dtbs modules
+make[4]: Entering directory '/home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102'
+  DTCO    arch/arm64/boot/dts/overlays/mm610x-spi.dtbo
+  LD      .tmp_vmlinux.kallsyms1
+  NM      .tmp_vmlinux.kallsyms1.syms
+  KSYMS   .tmp_vmlinux.kallsyms1.S
+  AS      .tmp_vmlinux.kallsyms1.o
+  LD      .tmp_vmlinux.kallsyms2
+  NM      .tmp_vmlinux.kallsyms2.syms
+  KSYMS   .tmp_vmlinux.kallsyms2.S
+  AS      .tmp_vmlinux.kallsyms2.o
+  LD      vmlinux
+  NM      System.map
+  SORTTAB vmlinux
+  OBJCOPY arch/arm64/boot/Image
+make[4]: Leaving directory '/home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102'
+# If .config did not change, use the previous timestamp to avoid package rebuilds
+cmp -s /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.modules.save && mv /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.modules.save /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config; cp -fpR /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.config.modules.save
+touch /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/.modules
+make -C image compile TARGET_BUILD=
+make[4]: Entering directory '/home/joseca/openmanet-firmware/target/linux/bcm27xx/image'
+cp -fpR /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/linux-6.6.102/COPYING /home/joseca/openmanet-firmware/build_dir/target-aarch64_cortex-a76_musl/linux-bcm27xx_bcm2712/COPYING.linux
+make[4]: Leaving directory '/home/joseca/openmanet-firmware/target/linux/bcm27xx/image'
+make[3]: Leaving directory '/home/joseca/openmanet-firmware/target/linux/bcm27xx'
+make[2]: Leaving directory '/home/joseca/openmanet-firmware/target/linux'
+time: target/linux/compile#19.37#10.15#6.87
+make[1]: Leaving directory '/home/joseca/openmanet-firmware'
