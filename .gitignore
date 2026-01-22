@@ -11,7 +11,8 @@
 /staging_dir
 /tmp
 /logs
-/feeds
+/feeds/*
+!/feeds/morse/
 /feeds.conf
 /target/linux/feeds
 /overlay
