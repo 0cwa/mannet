@@ -1,1 +1,1 @@
-dtoverlay=mmx10x-sdio
+dtoverlay=mm_wlan

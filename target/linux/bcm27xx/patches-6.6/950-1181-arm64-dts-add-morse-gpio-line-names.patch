@@ -1,0 +1,82 @@
+From d4a7c7f59f8a8e8b8c9d2e5f3a1b4c6d8e9f0123 Mon Sep 17 00:00:00 2001
+From: Developer <dev@example.com>
+Date: Tue, 17 Feb 2026 00:00:00 +0000
+Subject: [PATCH] bcm27xx: Add Morse Micro GPIO line names to RPi5 device tree
+
+This patch modifies the bcm2712-rpi-5-b.dts and bcm2712d0-rpi-5-b.dts
+files within patch 950-1180 to add Morse Micro specific GPIO line names
+(MM_IRQ, MM_RESET, MM_WAKE, MM_BUSY) for proper identification by
+user-space scripts like morse_cli.sh and chipreset.sh.
+
+--- a/target/linux/bcm27xx/patches-6.6/950-1180-arm64-dts-Move-bcm2712-and-rp1-here.patch
++++ b/target/linux/bcm27xx/patches-6.6/950-1180-arm64-dts-Move-bcm2712-and-rp1-here.patch
+@@ -1739,16 +1739,16 @@
+ +&rp1_gpio {
+ +	gpio-line-names =
+ +		"ID_SDA", // GPIO0
+ +		"ID_SCL", // GPIO1
+ +		"GPIO2", // GPIO2
+ +		"GPIO3", // GPIO3
+ +		"GPIO4", // GPIO4
+-+		"GPIO5", // GPIO5
+++		"MM_IRQ", // GPIO5 - Morse IRQ
+ +		"GPIO6", // GPIO6
+ +		"GPIO7", // GPIO7
+ +		"GPIO8", // GPIO8
+ +		"GPIO9", // GPIO9
+ +		"GPIO10", // GPIO10
+ +		"GPIO11", // GPIO11
+ +		"GPIO12", // GPIO12
+ +		"GPIO13", // GPIO13
+ +		"GPIO14", // GPIO14
+ +		"GPIO15", // GPIO15
+ +		"GPIO16", // GPIO16
+-+		"GPIO17", // GPIO17
+++		"MM_RESET", // GPIO17 - Morse Reset
+ +		"GPIO18", // GPIO18
+ +		"GPIO19", // GPIO19
+ +		"GPIO20", // GPIO20
+ +		"GPIO21", // GPIO21
+ +		"GPIO22", // GPIO22
+-+		"GPIO23", // GPIO23
+-+		"GPIO24", // GPIO24
+++		"MM_WAKE", // GPIO23 - Morse Wake
+++		"MM_BUSY", // GPIO24 - Morse Busy
+ +		"GPIO25", // GPIO25
+ +		"GPIO26", // GPIO26
+ +		"GPIO27", // GPIO27
+@@ -3547,16 +3547,16 @@
+ +&rp1_gpio {
+ +	gpio-line-names =
+ +		"ID_SDA", // GPIO0
+ +		"ID_SCL", // GPIO1
+ +		"GPIO2", // GPIO2
+ +		"GPIO3", // GPIO3
+ +		"GPIO4", // GPIO4
+-+		"GPIO5", // GPIO5
+++		"MM_IRQ", // GPIO5 - Morse IRQ
+ +		"GPIO6", // GPIO6
+ +		"GPIO7", // GPIO7
+ +		"GPIO8", // GPIO8
+ +		"GPIO9", // GPIO9
+ +		"GPIO10", // GPIO10
+ +		"GPIO11", // GPIO11
+ +		"GPIO12", // GPIO12
+ +		"GPIO13", // GPIO13
+ +		"GPIO14", // GPIO14
+ +		"GPIO15", // GPIO15
+ +		"GPIO16", // GPIO16
+-+		"GPIO17", // GPIO17
+++		"MM_RESET", // GPIO17 - Morse Reset
+ +		"GPIO18", // GPIO18
+ +		"GPIO19", // GPIO19
+ +		"GPIO20", // GPIO20
+ +		"GPIO21", // GPIO21
+ +		"GPIO22", // GPIO22
+-+		"GPIO23", // GPIO23
+-+		"GPIO24", // GPIO24
+++		"MM_WAKE", // GPIO23 - Morse Wake
+++		"MM_BUSY", // GPIO24 - Morse Busy
+ +		"GPIO25", // GPIO25
+ +		"GPIO26", // GPIO26
+ +		"GPIO27", // GPIO27

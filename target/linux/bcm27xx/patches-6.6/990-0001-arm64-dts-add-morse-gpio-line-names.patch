@@ -1,0 +1,91 @@
+From d4a7c7f59f8a8e8b8c9d2e5f3a1b4c6d8e9f0123 Mon Sep 17 00:00:00 2001
+From: Developer <dev@example.com>
+Date: Tue, 17 Feb 2026 00:00:00 +0000
+Subject: [PATCH] arm64: dts: Add Morse Micro GPIO line names to RPi5 device trees
+
+Add Morse Micro specific GPIO line names (MM_IRQ, MM_RESET, MM_WAKE, MM_BUSY)
+to bcm2712-rpi-5-b.dts and bcm2712d0-rpi-5-b.dts. This allows user-space
+scripts like morse_cli.sh and chipreset.sh to find GPIOs by line names.
+
+---
+ arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dts   | 8 ++++----
+ arch/arm64/boot/dts/broadcom/bcm2712d0-rpi-5-b.dts | 8 ++++----
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dts b/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dts
+index 1234567..abcdefg 100644
+--- a/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dts
++++ b/arch/arm64/boot/dts/broadcom/bcm2712-rpi-5-b.dts
+@@ -37,7 +37,7 @@
+ 		"ID_SDA", // GPIO0
+ 		"ID_SCL", // GPIO1
+ 		"GPIO2", // GPIO2
+ 		"GPIO3", // GPIO3
+ 		"GPIO4", // GPIO4
+-		"GPIO5", // GPIO5
++		"MM_IRQ", // GPIO5 - Morse IRQ
+ 		"GPIO6", // GPIO6
+ 		"GPIO7", // GPIO7
+ 		"GPIO8", // GPIO8
+ 		"GPIO9", // GPIO9
+ 		"GPIO10", // GPIO10
+ 		"GPIO11", // GPIO11
+ 		"GPIO12", // GPIO12
+ 		"GPIO13", // GPIO13
+ 		"GPIO14", // GPIO14
+ 		"GPIO15", // GPIO15
+ 		"GPIO16", // GPIO16
+-		"GPIO17", // GPIO17
++		"MM_RESET", // GPIO17 - Morse Reset
+ 		"GPIO18", // GPIO18
+ 		"GPIO19", // GPIO19
+ 		"GPIO20", // GPIO20
+ 		"GPIO21", // GPIO21
+ 		"GPIO22", // GPIO22
+-		"GPIO23", // GPIO23
+-		"GPIO24", // GPIO24
++		"MM_WAKE", // GPIO23 - Morse Wake
++		"MM_BUSY", // GPIO24 - Morse Busy
+ 		"GPIO25", // GPIO25
+ 		"GPIO26", // GPIO26
+ 		"GPIO27", // GPIO27
+
+diff --git a/arch/arm64/boot/dts/broadcom/bcm2712d0-rpi-5-b.dts b/arch/arm64/boot/dts/broadcom/bcm2712d0-rpi-5-b.dts
+index 1234567..abcdefg 100644
+--- a/arch/arm64/boot/dts/broadcom/bcm2712d0-rpi-5-b.dts
++++ b/arch/arm64/boot/dts/broadcom/bcm2712d0-rpi-5-b.dts
+@@ -37,7 +37,7 @@
+ 		"ID_SDA", // GPIO0
+ 		"ID_SCL", // GPIO1
+ 		"GPIO2", // GPIO2
+ 		"GPIO3", // GPIO3
+ 		"GPIO4", // GPIO4
+-		"GPIO5", // GPIO5
++		"MM_IRQ", // GPIO5 - Morse IRQ
+ 		"GPIO6", // GPIO6
+ 		"GPIO7", // GPIO7
+ 		"GPIO8", // GPIO8
+ 		"GPIO9", // GPIO9
+ 		"GPIO10", // GPIO10
+ 		"GPIO11", // GPIO11
+ 		"GPIO12", // GPIO12
+ 		"GPIO13", // GPIO13
+ 		"GPIO14", // GPIO14
+ 		"GPIO15", // GPIO15
+ 		"GPIO16", // GPIO16
+-		"GPIO17", // GPIO17
++		"MM_RESET", // GPIO17 - Morse Reset
+ 		"GPIO18", // GPIO18
+ 		"GPIO19", // GPIO19
+ 		"GPIO20", // GPIO20
+ 		"GPIO21", // GPIO21
+ 		"GPIO22", // GPIO22
+-		"GPIO23", // GPIO23
+-		"GPIO24", // GPIO24
++		"MM_WAKE", // GPIO23 - Morse Wake
++		"MM_BUSY", // GPIO24 - Morse Busy
+ 		"GPIO25", // GPIO25
+ 		"GPIO26", // GPIO26
+ 		"GPIO27", // GPIO27
+-- 
+2.25.1
