@@ -6,7 +6,7 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 
 --- /dev/null
 +++ b/arch/arm/boot/dts/overlays/mm610x-spi-overlay.dts
-@@ -0,0 +1,128 @@
+@@ -0,0 +1,142 @@
 +/dts-v1/;
 +/plugin/;
 +
@@ -116,27 +116,35 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 +		target = <&rp1_gpio>;
 +		__overlay__ {
 +			rp1_morse_wake: rp1_morse_wake {
-+				function = "gpio";
-+				pins = "gpio23";
-+				bias-pull-up;
++				pin_wake {
++					function = "gpio";
++					pins = "gpio23";
++					bias-pull-up;
++				};
 +			};
 +
 +			rp1_morse_busy: rp1_morse_busy {
-+				function = "gpio";
-+				pins = "gpio24";
-+				bias-pull-down;
++				pin_busy {
++					function = "gpio";
++					pins = "gpio24";
++					bias-pull-down;
++				};
 +			};
 +
 +			rp1_morse_irq: rp1_morse_irq {
-+				function = "gpio";
-+				pins = "gpio5";
-+				bias-pull-up;
++				pin_irq {
++					function = "gpio";
++					pins = "gpio5";
++					bias-pull-up;
++				};
 +			};
 +
 +			rp1_morse_reset: rp1_morse_reset {
-+				function = "gpio";
-+				pins = "gpio17";
-+				bias-pull-up;
++				pin_reset {
++					function = "gpio";
++					pins = "gpio17";
++					bias-pull-up;
++				};
 +			};
 +		};
 +	};
@@ -144,7 +152,7 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 \ No newline at end of file
 --- /dev/null
 +++ b/arch/arm/boot/dts/overlays/mm810x-spi-overlay.dts
-@@ -0,0 +1,128 @@
+@@ -0,0 +1,142 @@
 +/dts-v1/;
 +/plugin/;
 +
@@ -254,27 +262,35 @@ Subject: [PATCH] bcm27xx: (APP-3660) Create separate SPI device tree overlay
 +		target = <&rp1_gpio>;
 +		__overlay__ {
 +			rp1_morse_wake: rp1_morse_wake {
-+				function = "gpio";
-+				pins = "gpio23";
-+				bias-pull-up;
++				pin_wake {
++					function = "gpio";
++					pins = "gpio23";
++					bias-pull-up;
++				};
 +			};
 +
 +			rp1_morse_busy: rp1_morse_busy {
-+				function = "gpio";
-+				pins = "gpio24";
-+				bias-pull-down;
++				pin_busy {
++					function = "gpio";
++					pins = "gpio24";
++					bias-pull-down;
++				};
 +			};
 +
 +			rp1_morse_irq: rp1_morse_irq {
-+				function = "gpio";
-+				pins = "gpio5";
-+				bias-pull-up;
++				pin_irq {
++					function = "gpio";
++					pins = "gpio5";
++					bias-pull-up;
++				};
 +			};
 +
 +			rp1_morse_reset: rp1_morse_reset {
-+				function = "gpio";
-+				pins = "gpio17";
-+				bias-pull-up;
++				pin_reset {
++					function = "gpio";
++					pins = "gpio17";
++					bias-pull-up;
++				};
 +			};
 +		};
 +	};
