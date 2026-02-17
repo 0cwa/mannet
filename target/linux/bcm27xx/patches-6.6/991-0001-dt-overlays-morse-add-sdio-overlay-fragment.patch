@@ -11,8 +11,8 @@ Both platforms use the same node name (mm6108_sdio@0) for user-space compatibili
 GPIOs (5, 17, 23, 24) are the same on the 40-pin header across all models.
 
 ---
- .../arm/boot/dts/overlays/mm_wlan-overlay.dts | 102 ++++++++++++++++++++
- 1 file changed, 102 insertions(+)
+ .../arm/boot/dts/overlays/mm_wlan-overlay.dts | 89 ++++++++++++++++++++
+ 1 file changed, 89 insertions(+)
  create mode 100644 arch/arm/boot/dts/overlays/mm_wlan-overlay.dts
 
 diff --git a/arch/arm/boot/dts/overlays/mm_wlan-overlay.dts b/arch/arm/boot/dts/overlays/mm_wlan-overlay.dts
@@ -20,7 +20,7 @@ new file mode 100644
 index 000000000..8c4a9f2e1
 --- /dev/null
 +++ b/arch/arm/boot/dts/overlays/mm_wlan-overlay.dts
-@@ -0,0 +1,102 @@
+@@ -0,0 +1,89 @@
 +/dts-v1/;
 +/plugin/;
 +
@@ -110,5 +110,3 @@ index 000000000..8c4a9f2e1
 +		};
 +	};
 +};
--- 
-2.25.1
