@@ -260,7 +260,7 @@ define Device/rpi-5
 	kmod-brcmfmac wpad-basic-mbedtls \
 	kmod-i2c-bcm2835 kmod-spi-bcm2835 \
 	kmod-i2c-brcmstb \
-	kmod-i2c-designware-platform kmod-spi-dw-mmio \
+	kmod-i2c-designware-platform \
 	kmod-hwmon-pwmfan kmod-thermal
   IMAGE/sysupgrade.img.gz := boot-common | sdcard-img | gzip | append-metadata
   IMAGE/factory.img.gz := boot-common | sdcard-img | gzip
@@ -279,7 +279,7 @@ define Device/morse_rpi5_base
   # Simplify by removing board and OpenWRT version.
   IMAGE_PREFIX = $$(VERSION_DIST_SANITIZED)-$$(IMG_PREFIX_VERCODE)$$(IMG_PREFIX_EXTRA)$$(call sanitize,$$(DEVICE_MODEL)-$$(DEVICE_VARIANT))
   DEVICE_IMG_NAME = $$(IMAGE_PREFIX)-$$(1)-$$(2)
-  DEVICE_PACKAGES += kmod-morse netifd-morse morse-fw-6108 morse-fw-8108 kmod-spi-dw-mmio kmod-i2c-designware-platform
+  DEVICE_PACKAGES += kmod-morse netifd-morse morse-fw-6108 morse-fw-8108 kmod-i2c-designware-platform
   IMAGE/sysupgrade.img.gz := boot-common | boot-rpi5-morse | sdcard-img | gzip | append-metadata
   IMAGE/factory.img.gz := boot-common | boot-rpi5-morse | sdcard-img | gzip
 endef
@@ -291,6 +291,7 @@ define Device/bcm2712_mm6108-spi
   SYSINFO_MODEL := $$(DEVICE_VENDOR) $$(DEVICE_MODEL) ($$(DEVICE_VARIANT))
   SUPPORTED_DEVICES += bcm2712,mm6108-spi
   DISTROCONFIG_EXTRA := mm610x-spi
+  DEVICE_PACKAGES += kmod-spi-dw-mmio
 endef
 ifeq ($(SUBTARGET),bcm2712)
   TARGET_DEVICES += bcm2712_mm6108-spi

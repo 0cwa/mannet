@@ -18,6 +18,10 @@ CONFIG_PACKAGE_luci-app-ekhwizards=y
 
 CONFIG_PACKAGE_bsp-bcm271x=y
 
+# SPI support for RPi5 (RP1 SPI controller) - built-in for SPI builds
+CONFIG_PACKAGE_kmod-spi-dw=y
+CONFIG_PACKAGE_kmod-spi-dw-mmio=y
+
 CONFIG_TARGET_ROOTFS_PARTSIZE=4092
 CONFIG_PACKAGE_persistent-vars-storage-bcm2711=y
 
